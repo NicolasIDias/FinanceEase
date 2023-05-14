@@ -11,7 +11,11 @@
 Install packages with your preferred package manager, e.g. npm:
 
 ```
-npm install or yarn install
+npm install
+```
+OR
+```
+yarn install
 ```
 
 ### Production
@@ -19,5 +23,9 @@ npm install or yarn install
 To start the server use these commands:
 
 ```
-yarn run dev OR nodemon src/index.js
+yarn run dev
+```
+OR
+```
+nodemon src/index.js
 ```
