@@ -16,7 +16,7 @@ npm install or yarn install
 
 ### Production
 
-To start the server with this command:
+To start the server use these commands:
 
 ```
 yarn run dev OR nodemon src/index.js
