@@ -1,4 +1,5 @@
 const UsersRepository = require('../repositories/UsersRepository')
+const validarCPF = require('./CpfValidator')
 
 class UserController {
   async index (request, response) {
@@ -40,14 +41,19 @@ class UserController {
       return response.status(400).json({ error: 'This email is already in use' })
     }
 
-    const user = await UsersRepository.create({
-      name,
-      email,
-      phone,
-      cpf
-    })
+    const cpfIsValid = await validarCPF(cpf)
 
-    response.json(user)
+    if (cpfIsValid === false) {
+      return response.status(400).json({ erro: 'cpf is invalid' })
+    } else {
+      const user = await UsersRepository.create({
+        name,
+        email,
+        phone,
+        cpf
+      })
+      response.json(user)
+    }
   }
 
   async update (request, response) {
@@ -72,20 +78,30 @@ class UserController {
       return response.status(400).json({ erro: 'phone is required' })
     }
 
+    if (!cpf) {
+      return response.status(400).json({ erro: 'cpf is required' })
+    }
+
     const userExistsByEmail = await UsersRepository.findByEmail(email)
 
     if (userExistsByEmail && userExistsByEmail.id !== id) {
       return response.status(400).json({ error: 'This email is already in use' })
     }
 
-    const user = await UsersRepository.update(id, {
-      name,
-      email,
-      phone,
-      cpf
-    })
+    const cpfIsValid = await validarCPF(cpf)
 
-    response.json(user)
+    if (cpfIsValid === false) {
+      return response.status(400).json({ erro: 'cpf is invalid' })
+    } else {
+      const user = await UsersRepository.update(id, {
+        name,
+        email,
+        phone,
+        cpf
+      })
+
+      response.json(user)
+    }
   }
 
   async delete (request, response) {
