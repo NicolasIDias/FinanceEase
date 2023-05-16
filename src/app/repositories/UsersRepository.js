@@ -81,7 +81,7 @@ class UsersRepository {
         cpf
       }
       Users = Users.map((user) => (
-        Users.id === id ? updatedUser : user
+        user.id === id ? updatedUser : user
       ))
       resolve(updatedUser)
     })
