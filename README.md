@@ -29,3 +29,36 @@ OR
 ```
 nodemon src/index.js
 ```
+
+Para criar um usuario, utilize o metodo POST com os seguintes parametros:
+Ex:
+```
+  {
+    "name": "John",
+    "email": "johndoe@mail.com",
+    "phone": "1234567",
+    "cpf": "12345678901"
+   }
+ ```
+ 
+ Para fazer um update, utilize o metodo PUT com os seguintes parametros:
+ Ex: 
+ Na url ```https://localhost:{port}/user/{ID DO USUARIO}```
+ No body:
+ ```
+    {
+      "name": "Jake",
+      "email": "johndoe@mail.com",
+      "phone": "1234567",
+      "cpf": "12345678901"
+    }
+ ```
+ Veja que alterei apenas o nome de usuario.
+  
+ Para deletar um usuario, utilize o metodo DELETE com o seguinte parametro na URL:
+ Ex: 
+ Na url ```https://localhost:{port}/user/{ID DO USUARIO}```
+ 
+ E por fim, para vizualizar todos os usuarios existentes, utilize o metodo GET
+ Ex:
+ Na url ```https://localhost:{port}/user```
