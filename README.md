@@ -37,7 +37,7 @@ Ex:
     "name": "John",
     "email": "johndoe@mail.com",
     "phone": "1234567",
-    "cpf": "12345678901"
+    "cpf": "12345678901" // UTILIZAR UM CPF QUE SEJA "VALIDO"
    }
  ```
  
@@ -50,7 +50,7 @@ Ex:
       "name": "Jake",
       "email": "johndoe@mail.com",
       "phone": "1234567",
-      "cpf": "12345678901"
+      "cpf": "12345678901" // UTILIZAR UM CPF QUE SEJA "VALIDO"
     }
  ```
  Veja que alterei apenas o nome de usuario.
